@@ -218,18 +218,12 @@ local function onunequip(inst, owner)
 end
 
 local function OnAttack(inst,owner,target)
-	if TheWorld:HasTag("cave") then
-		return
-	end
     
-    if target ~= inst.LastAttackTarget then
-        inst.AttackNum = 1
-    else
-        inst.AttackNum = inst.AttackNum + 1
-        if inst.AttackNum >= 6 then 
-            DoDivineWrath(inst,owner,target)
-            inst.AttackNum = 0
-        end
+    inst.AttackNum = inst.AttackNum + 1
+    
+    if inst.AttackNum >= 5 then 
+        DoDivineWrath(inst,owner,target)
+        inst.AttackNum = 0
     end
 
     inst.LastAttackTarget = target 

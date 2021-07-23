@@ -27,7 +27,7 @@ local assets =
 local function TemperatureChange(inst, data)
 	local ambient_temp = TheWorld.state.temperature
 
-	if ambient_temp >0 then
+	if ambient_temp > 0 then
 		inst.components.equippable.walkspeedmult = 1.1
 	else
 		inst.components.equippable.walkspeedmult =  1.25
@@ -91,7 +91,7 @@ local function fn()
 
 
 	inst:AddComponent("armor")
-	inst.components.armor:InitCondition(4000, 0.85)
+	inst.components.armor:InitCondition(4500, 0.85)
 		inst.components.armor.SetCondition =  function(self,amount)	
 			if self.indestructible then
 				return
