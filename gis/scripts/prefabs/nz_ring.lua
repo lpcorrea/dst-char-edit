@@ -177,7 +177,7 @@ local function fn(Sim)
     inst.hittargets = {}
 	
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(34)
+    inst.components.weapon:SetDamage(68)
     inst.components.weapon:SetRange(16, 18)
     inst.components.weapon.getdamagefn = getdamagefn
 

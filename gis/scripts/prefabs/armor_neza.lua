@@ -37,7 +37,7 @@ local function OnResistDamage(inst)--, damage)
 		end
 	end
 
-    inst.components.fueled:DoDelta(-10)
+    inst.components.fueled:DoDelta(-5)
 	
 	inst.last_take_damage_time = GetTime()
 end

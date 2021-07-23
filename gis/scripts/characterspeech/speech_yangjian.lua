@@ -276,8 +276,8 @@ return
     },
 	BATTLECRY =
 	{
-		GENERIC = "金气思斗，迥立苍苍！",		--战斗
-		PIG = "区区的猪精，也可挑衅天神！",		--战斗 猪人
+		GENERIC = "fvck giz branco ahah",		--战斗
+		PIG = ":)",		--战斗 猪人
 		PREY = "挥剑而亡！",		--战斗 猎物？？大象？
 		SPIDER = "尚未化形，竟敢伤人！",		--战斗 蜘蛛
 		SPIDER_WARRIOR = "倒有些本事！",		--战斗 蜘蛛战士

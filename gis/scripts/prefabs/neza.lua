@@ -31,9 +31,6 @@ end
 
 local function OnKill(inst,data)
 	local victim = data.victim
-	if victim and not victim:HasTag('monster') and not victim:HasTag('hostile') and not victim:HasTag('wall') then
-		inst.components.sanity:DoDelta(-2)
-	end
 	if victim and victim:HasTag('monster') and math.random()< 0.15 then
 		inst.components.sanity:DoDelta(10)
 	end

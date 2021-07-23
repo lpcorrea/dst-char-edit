@@ -366,7 +366,7 @@ local function fn()
 
     inst:AddComponent("myth_rechargeable")
     inst.components.rechargeable = inst.components.myth_rechargeable
-    inst.components.rechargeable:SetRechargeTime(15)
+    inst.components.rechargeable:SetRechargeTime(8)
 	inst.components.rechargeable:SetRechargeRate(rechargerate)
     inst:RegisterComponentActions("rechargeable")
 

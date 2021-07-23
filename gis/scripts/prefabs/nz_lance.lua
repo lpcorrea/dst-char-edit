@@ -161,7 +161,7 @@ local function fn()
 
 	inst:AddComponent("myth_rechargeable")
     inst.components.rechargeable = inst.components.myth_rechargeable
-	inst.components.rechargeable:SetRechargeTime(20)
+	inst.components.rechargeable:SetRechargeTime(13)
 	inst:RegisterComponentActions("rechargeable")
 
 	MakeHauntableLaunch(inst)
