@@ -1,7 +1,7 @@
-name = "ENG HAHAAH NINJX 3333333333333"
-description = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-author = "el ninjx fvck giz haa"
-version = "1.0"
+name = "Eng (ninjx)"
+description = "xxx"
+author = "ninjx"
+version = "1.1"
 forumthread = ""
 api_version = 10
 dont_starve_compatible = false --Not compatible with Singleplayer
@@ -28,7 +28,7 @@ configuration_options =
             {description = "Enable", data = "y"},--(Default)
             {description = "Disable", data = "n"},
         }, 
-        default = "y",
+        default = "n",
     },
 	
 	{
@@ -59,7 +59,7 @@ configuration_options =
 		hover = "Crafting recipe difficulty levels.",
 		options = {
 			{data="easy",description="Easy",
-			   hover = "8 Scrap, 1 Gear"},
+			   hover = "15 Scrap, 1 Gear"},
 			{data="default",description="Default",
 			   hover = "20 Scrap, 3 Gears"},
 			{data="hard",description="Hard",
@@ -113,7 +113,7 @@ configuration_options =
             {description = "Enable", data = "y"},
             {description = "Disable", data = "n"},
         }, 
-        default = "n",
+        default = "y",
     },
 
 	{
@@ -325,7 +325,7 @@ configuration_options =
             {description = "Yes", data = "y"},
             {description = "No(Default)", data = "n"},
         }, 
-        default = "y",
+        default = "n",
     },
 
 	{
@@ -598,9 +598,9 @@ configuration_options =
 			{description = "300", data = 300},
 			{description = "375", data = 375},
 			{description = "400", data = 400},
-			{description = "inf", data = 9 * 999999999},
+			{description = "700000", data = 700000},
 		},
-		default = 9 * 999999999,
+		default = 700000,
 	},
 
 	{
@@ -617,7 +617,7 @@ configuration_options =
 		    {data="harder",description="Harder",
 			   hover = "12 Scrap, 5 Twigs, 1 Gear"},
 		},
-		default="default"
+		default="easy"
 	},
 
 	{
@@ -661,7 +661,7 @@ configuration_options =
 			{description = "90%", data = .9},
 			{description = "95%", data = .95},
 		},
-		default = .90,
+		default = .9,
 	},
 
 	{
@@ -722,9 +722,9 @@ configuration_options =
 			{description = "490", data = 490},
 			{description = "500", data = 500},
 			{description = "530", data = 530},
-			{description = "inf", data = 9 * 999999999},
+			{description = "70000000", data = 70000000},
 		},
-		default = 9 * 999999999,
+		default = 70000000,
 	},
 
 	{

@@ -49,22 +49,10 @@ local function lighton(inst, owner)
     end)
 end
 
---武器攻击范围随装备角色的脑残上限变化
-local function rangechange(inst)
-    if inst.components.inventoryitem.owner ~= nil then
-        if inst.components.inventoryitem.owner.components.sanity then
-            local ownersanity = inst.components.inventoryitem.owner.components.sanity.max
-            local rangemodifer = ((ownersanity / 200)^4+1)/1.5
-            inst.components.weapon:SetRange(rangemodifer, rangemodifer + 2)
-        end
-    end
-end
-
 local function onequip(inst, owner) 
     owner.AnimState:OverrideSymbol("swap_object", "swap_totooriastaff5yellow", "swap_totooriastaff5yellow")
     owner.AnimState:Show("ARM_carry") 
     owner.AnimState:Hide("ARM_normal") 
-    rangechange(inst)
 end
 
 local function onunequip(inst, owner) 
@@ -78,8 +66,6 @@ local function onattack(inst, attacker, target, skipsanity, owner)
 	if not skipsanity and attacker ~= nil and attacker.components.sanity ~= nil then
         attacker.components.sanity:DoDelta(-TUNING.SANITY_SUPERTINY)
     end
-
-    rangechange(inst)
 
     if not target:IsValid() then
         return
@@ -154,8 +140,6 @@ local function fn()
 	
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.atlasname = "images/inventoryimages/totooriastaff5yellow.xml"
-	
-    inst:DoTaskInTime(0.2, function() rangechange(inst) end)
 
 	-- 让物品不需要装备就能发光，丢地上也能发光
 	

@@ -1,16 +1,7 @@
 name = " [ggggggggggg.]托托莉Totooria"
-description =
-[[V2.4.1
-Totooria Helmold, Alchemist of Arland
-High sanity, low health, low damage
-Can level up by doing anything.
-Eating Mandrake will reset skill points with penalty.
-Able to read, able to make multiple items.
-Starts the game with Totooria's Wand (upgradable).
-Upgraded Totooria's Wand will have more functions.
-]]
-author = "柴柴"
-version = "2.4.3"
+description = "Pega gabi hahahahahaha"
+author = "el ninjx"
+version = "1.3"
 
 forumthread = ""
 

@@ -62,14 +62,13 @@ local function fn()
 
     inst:AddComponent("weapon")
     inst.components.weapon:SetDamage(TUNING.TF2WRENCH_DAMAGE)
-    inst.components.weapon:SetRange(6, 8)
     inst.components.weapon:SetOnAttack(onattack)
+    inst.components.weapon:SetRange(6, 8)
 
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
-    inst.components.inventoryitem.keepondeath = true
-    
+
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "tf2wrench"
     inst.components.inventoryitem.atlasname = "images/inventoryimages/tf2wrench.xml"

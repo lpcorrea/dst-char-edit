@@ -93,7 +93,6 @@ local function fn()
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
-    inst.components.inventoryitem.keepondeath = true
 
     inst:AddComponent("armor")
     inst.components.armor:InitCondition(TUNING.ARMOR_EHARDHAT, TUNING.ARMOR_HARDHAT_ABSORPTION)

@@ -76,10 +76,10 @@ local function upgrade(inst)
 	inst:AddTag("lvl3")
 	inst:RemoveTag("lvl1")
 	inst:RemoveTag("lvl2")
-	inst.components.named:SetName("fvck lok gaaaaaaahahahahaad lvl 3")
+	inst.components.named:SetName("Dispenser lvl 3")
 	inst.AnimState:PlayAnimation("upgrade3")
 	inst.AnimState:PushAnimation("idle_3", true)
-	inst.components.sanityaura.aura = TUNING.SANITYAURA_MED
+	inst.components.sanityaura.aura = TUNING.SANITYAURA_TINY
     end
 end
 
@@ -227,34 +227,65 @@ local function dispenseitem(inst, phase, cavephase)
 		    setmeterlevl(inst)
     	        end
 	    end
-			if inst:HasTag("lvl3") then
-				inst.components.lootdropper:SpawnLootPrefab("scrap")
-				inst.components.lootdropper:SpawnLootPrefab("scrap")
-				inst.components.lootdropper:SpawnLootPrefab("scrap")
-				inst.components.lootdropper:SpawnLootPrefab("scrap")
-				inst.components.lootdropper:SpawnLootPrefab("scrap")
-				item = weighted_random_choice(fuel)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				item = weighted_random_choice(mineral)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				item = weighted_random_choice(rare)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.components.lootdropper:SpawnLootPrefab(item)
-				inst.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
-				inst.AnimState:PlayAnimation("hit_3")
-				setmeterlevl(inst)
-			end
+	    if inst:HasTag("lvl3") then
+	        if TheWorld.state.isday then
+		    inst.components.lootdropper:SpawnLootPrefab("scrap")
+		    inst.components.lootdropper:SpawnLootPrefab("scrap")
+		    item = weighted_random_choice(fuel)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    item = weighted_random_choice(mineral)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    if math.random() < .33 then
+		        item = weighted_random_choice(rare)
+			inst.components.lootdropper:SpawnLootPrefab(item)
+		    end
+		    inst.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
+		    inst.components.fueled.currentfuel = inst.components.fueled.currentfuel - 1
+		    inst.AnimState:PlayAnimation("hit_3")
+		    setmeterlevl(inst)
+    	        end
+	        if TheWorld.state.isdusk then
+		    inst.components.lootdropper:SpawnLootPrefab("scrap")
+		    inst.components.lootdropper:SpawnLootPrefab("scrap")
+		    item = weighted_random_choice(fuel)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    item = weighted_random_choice(mineral)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    if math.random() < .33 then
+		        item = weighted_random_choice(rare)
+			inst.components.lootdropper:SpawnLootPrefab(item)
+		    end
+		    inst.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
+		    inst.components.fueled.currentfuel = inst.components.fueled.currentfuel - 1
+		    inst.AnimState:PlayAnimation("hit_3")
+		    setmeterlevl(inst)
+    	        end
+	        if TheWorld.state.isnight then
+		    inst.components.lootdropper:SpawnLootPrefab("scrap")
+		    inst.components.lootdropper:SpawnLootPrefab("scrap")
+		    item = weighted_random_choice(fuel)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    item = weighted_random_choice(mineral)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    inst.components.lootdropper:SpawnLootPrefab(item)
+		    if math.random() < .33 then
+			item = weighted_random_choice(night)
+			inst.components.lootdropper:SpawnLootPrefab(item)
+			inst.components.lootdropper:SpawnLootPrefab(item)
+		        item = weighted_random_choice(rare)
+			inst.components.lootdropper:SpawnLootPrefab(item)
+		    end
+		    inst.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
+		    inst.components.fueled.currentfuel = inst.components.fueled.currentfuel - 1
+		    inst.AnimState:PlayAnimation("hit_3")
+		    setmeterlevl(inst)
+	        end
+	    end
         end)
     end
 end
@@ -468,7 +499,7 @@ local function fn(inst, self, range)
 			guy.components.health:DoDelta(2, true, nil, true)
 		    end
 		    if inst:HasTag("lvl3") then
-			guy.components.health:DoDelta(10, true, nil, true)
+			guy.components.health:DoDelta(3, true, nil, true)
 		    end
 	    end
 		end

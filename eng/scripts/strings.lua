@@ -9,7 +9,7 @@ GLOBAL.STRINGS.CHARACTER_DESCRIPTIONS.engineer = "*Can build his various contrap
 else
 GLOBAL.STRINGS.CHARACTER_DESCRIPTIONS.engineer = "*Can build his various contraptions\n*Brings his own wrench and hard hat\n*Weaker without his machines"
 end
-GLOBAL.STRINGS.LAVAARENA_CHARACTER_DESCRIPTIONS.engineer = "*PLACEHOLDER\n\n\n\nExpertise: Melee, Darts, Books"--Temp
+GLOBAL.STRINGS.LAVAARENA_CHARACTER_DESCRIPTIONS.engineer = "*PLACEHOLDER\n\n\n\nExpertise:\Melee, Darts, Books"--Temp
 GLOBAL.STRINGS.QUAGMIRE_CHARACTER_DESCRIPTIONS.engineer = "*Improves nearby Grill efficiency\n\n\n\n*Expertise:\nCooking"
 GLOBAL.STRINGS.CHARACTER_QUOTES.engineer = "\"I solve practical problems.\""
 GLOBAL.STRINGS.CHARACTERS.ENGINEER = require "speech_engineer"
