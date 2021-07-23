@@ -342,6 +342,7 @@ local function fn()
 
     inst:AddComponent("weapon")
     inst.components.weapon:SetDamage(51)
+    inst.components.weapon:SetRange(6, 8)
     inst.components.weapon:SetOnAttack(OnAttack)
 
     inst:AddComponent("inspectable")
@@ -356,6 +357,7 @@ local function fn()
     inst.components.equippable.insulated = true
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
+    inst.components.inventoryitem.keepondeath = true
 
     inst:AddComponent("myth_aoespell")
     inst.components.aoespell = inst.components.myth_aoespell

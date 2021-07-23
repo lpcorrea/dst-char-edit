@@ -69,7 +69,7 @@ local function fn()
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.inventoryitem.keepondeath = true
-
+    
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "tf2wrench"
     inst.components.inventoryitem.atlasname = "images/inventoryimages/tf2wrench.xml"
