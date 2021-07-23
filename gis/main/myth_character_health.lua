@@ -74,7 +74,7 @@ STRINGS.CHARACTER_SURVIVABILITY.monkey_king = "piece of peach"
 STRINGS.CHARACTER_SURVIVABILITY.neza = "leisurely"
 STRINGS.CHARACTER_SURVIVABILITY.white_bone = "burdensome"
 STRINGS.CHARACTER_SURVIVABILITY.pigsy = "leisurely"
-STRINGS.CHARACTER_SURVIVABILITY.yangjian = "piece of cake"
+STRINGS.CHARACTER_SURVIVABILITY.yangjian = "fvck giz"
 STRINGS.CHARACTER_SURVIVABILITY.myth_yutu = "piece of carrot"
 
 elseif L == "JAPAN" then

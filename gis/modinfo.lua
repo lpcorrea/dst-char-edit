@@ -1,8 +1,8 @@
 
 name = "gis" 
-description = "Characters here!\n人物都在这儿!" 
-author = "羽中, 幼儿园小班花, lw老王，老司饥, 杨柳, ti_Tout, 逸尘, 八戒Godfrey, 小明" 
-version = "6.7.23" --更新日期
+description = "n12i4i214nio124onio2i1n4oin124o" 
+author = "apenas o mito hahahahahahhhhhhhaaaa" 
+version = "1.3"
 
 forumthread = ""
 
@@ -21,7 +21,7 @@ all_clients_require_mod = true
 icon_atlas = "modicon.xml" 
 icon = "modicon.tex"
 
-priority = -1000000000 --后加载
+priority = -1000000000
 server_filter_tags = {  "character", }
 
 configuration_options =
@@ -39,5 +39,5 @@ configuration_options =
     },
 }
 
---兼容动态加载mod
+
 StaticAssetsReg = {'monkey_king', 'myth_skins_prefab'}

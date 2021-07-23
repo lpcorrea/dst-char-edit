@@ -467,26 +467,16 @@ AddStategraphState("wilson",
 			inst.components.locomotor:Stop()
             inst.AnimState:PlayAnimation("multithrust_yell")
 			local action = inst:GetBufferedAction()
-			if TheWorld:HasTag("cave") then
-				if not TheWorld.state.israining then
-					TheWorld:PushEvent("ms_forceprecipitation",true)
-				end
-				if action and action.invobject ~= nil and action.invobject.components.rechargeable ~= nil then
+			local action = inst:GetBufferedAction()
+			local pos = action and action:GetActionPoint() or nil
+			if pos then
+				TheWorld:PushEvent("ms_sendlightningstrike", pos)
+				TheWorld:PushEvent("ms_deltamoisture", 50)
+				if action.invobject ~= nil and action.invobject.components.rechargeable ~= nil then
 					action.invobject.components.rechargeable:StartRecharging()
 				end
-				inst.components.talker:Say("大地之隔，雷电难达")
-			else
-				local action = inst:GetBufferedAction()
-				local pos = action and action:GetActionPoint() or nil
-				if pos then
-					TheWorld:PushEvent("ms_sendlightningstrike", pos)
-					TheWorld:PushEvent("ms_deltamoisture", 50)
-					if action.invobject ~= nil and action.invobject.components.rechargeable ~= nil then
-						action.invobject.components.rechargeable:StartRecharging()
-					end
-					if inst.components.talker then
-						inst.components.talker:Say(STRINGS.NAMES.YJ_SPEAR_NEDDTHUNDER)
-					end
+				if inst.components.talker then
+					inst.components.talker:Say(STRINGS.NAMES.YJ_SPEAR_NEDDTHUNDER)
 				end
 			end
 		end,
@@ -553,16 +543,6 @@ AddStategraphState("wilson",
 			inst.components.locomotor:Stop()
             inst.AnimState:PlayAnimation("multithrust_yell")
 			local action = inst:GetBufferedAction()
-			if TheWorld:HasTag("cave") then
-				inst.noyinlei = true
-				if not TheWorld.state.israining then
-					TheWorld:PushEvent("ms_forceprecipitation",true)
-				end
-				if action and action.invobject ~= nil and action.invobject.components.rechargeable ~= nil then
-					action.invobject.components.rechargeable:StartRecharging()
-				end
-				inst.components.talker:Say("大地之隔，雷电难达")
-			end
 		end,
 		timeline =
 		{
