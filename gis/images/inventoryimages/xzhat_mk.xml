@@ -1,0 +1,9 @@
+<Atlas>
+	<Texture filename="xzhat_mk.tex" />
+    <Elements>
+        <Element name="xzhat_mk_ear.tex" u1="0" u2="0.4921875" v1="0.5078125" v2="1" />
+        <Element name="xzhat_mk_horse.tex" u1="0.4921875" u2="0.984375" v1="0.5078125" v2="1" />
+        <Element name="xzhat_mk_none.tex" u1="0" u2="0.4921875" v1="0.015625" v2="0.5078125" />
+        <Element name="xzhat_mk_opera.tex" u1="0.4921875" u2="0.984375" v1="0.015625" v2="0.5078125" />
+    </Elements>
+</Atlas>

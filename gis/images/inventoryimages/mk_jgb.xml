@@ -1,0 +1,12 @@
+<Atlas>
+	<Texture filename="mk_jgb.tex" />
+    <Elements>
+        <Element name="mk_jgb_ear.tex" u1="0" u2="0.2460938" v1="0.7539063" v2="1" />
+        <Element name="mk_jgb_fire.tex" u1="0.2460938" u2="0.4921875" v1="0.7539063" v2="1" />
+        <Element name="mk_jgb_horse.tex" u1="0.4921875" u2="0.7382813" v1="0.7539063" v2="1" />
+        <Element name="mk_jgb_none.tex" u1="0.7382813" u2="0.984375" v1="0.7539063" v2="1" />
+        <Element name="mk_jgb_opera.tex" u1="0" u2="0.2460938" v1="0.5078125" v2="0.7539063" />
+        <Element name="mk_jgb_sea.tex" u1="0.2460938" u2="0.4921875" v1="0.5078125" v2="0.7539063" />
+        <Element name="mk_jgb_wish.tex" u1="0.4921875" u2="0.7382813" v1="0.5078125" v2="0.7539063" />
+    </Elements>
+</Atlas>
