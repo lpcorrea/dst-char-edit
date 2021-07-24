@@ -2,7 +2,7 @@
 name = "gis" 
 description = "n12i4i214nio124onio2i1n4oin124o" 
 author = "apenas o mito hahahahahahhhhhhhaaaa" 
-version = "1.5"
+version = "1.7"
 
 forumthread = ""
 

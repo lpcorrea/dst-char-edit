@@ -358,6 +358,7 @@ local function fn()
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.inventoryitem.keepondeath = true
+    inst.components.equippable.walkspeedmult = 1.7
 
     inst:AddComponent("myth_aoespell")
     inst.components.aoespell = inst.components.myth_aoespell

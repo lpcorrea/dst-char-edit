@@ -48,7 +48,6 @@ AddStategraphState('wilson',
 
         onenter = function(inst)
             inst.components.locomotor:Stop()
-			inst.components.hunger:DoDelta(-15)
 			inst.components.health:SetInvincible(true)
 			inst.AnimState:PlayAnimation("superjump_pre")
             local weapon = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)

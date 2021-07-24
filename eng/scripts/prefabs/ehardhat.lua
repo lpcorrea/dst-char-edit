@@ -95,6 +95,7 @@ local function fn()
     inst.components.equippable:SetOnUnequip(OnUnequip)
     inst.components.inventoryitem.keepondeath = true
     inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED * 4
+    inst.components.equippable.walkspeedmult = 1.7
 
     inst:AddComponent("armor")
     inst.components.armor:InitCondition(TUNING.ARMOR_EHARDHAT, TUNING.ARMOR_HARDHAT_ABSORPTION)

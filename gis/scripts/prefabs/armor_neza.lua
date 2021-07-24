@@ -117,7 +117,7 @@ local function fn()
 
 	inst:AddComponent("equippable")
 	inst.components.equippable.equipslot = EQUIPSLOTS.BODY
-	inst.components.equippable.walkspeedmult = 1.1
+	inst.components.equippable.walkspeedmult = 1.7
 	inst.components.equippable:SetOnEquip(onequip)
 	inst.components.equippable:SetOnUnequip(onunequip)
 

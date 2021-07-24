@@ -1,7 +1,7 @@
 name = "Eng (ninjx)"
 description = "xxx"
 author = "ninjx"
-version = "1.3"
+version = "1.4"
 forumthread = ""
 api_version = 10
 dont_starve_compatible = false --Not compatible with Singleplayer
