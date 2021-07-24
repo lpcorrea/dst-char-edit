@@ -222,7 +222,7 @@ local function fn(inst, self, range)
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
-    inst.components.equippable.walkspeedmult = TUNING.HEAVY_SPEED_MULT
+    inst.components.equippable.walkspeedmult = (TUNING.TOOLBOX_SPEED_MULT * 10)
 	inst.components.equippable.restrictedtag = "engie"
     ---------------------------------------
 

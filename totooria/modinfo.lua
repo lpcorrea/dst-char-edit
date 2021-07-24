@@ -1,7 +1,7 @@
 name = " [ggggggggggg.]托托莉Totooria"
 description = "Pega gabi hahahahahaha"
 author = "el ninjx"
-version = "1.3"
+version = "1.2.1"
 
 forumthread = ""
 

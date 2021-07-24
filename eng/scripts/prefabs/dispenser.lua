@@ -79,7 +79,7 @@ local function upgrade(inst)
 	inst.components.named:SetName("Dispenser lvl 3")
 	inst.AnimState:PlayAnimation("upgrade3")
 	inst.AnimState:PushAnimation("idle_3", true)
-	inst.components.sanityaura.aura = TUNING.SANITYAURA_TINY
+	inst.components.sanityaura.aura = TUNING.SANITYAURA_HUGE
     end
 end
 
@@ -499,7 +499,7 @@ local function fn(inst, self, range)
 			guy.components.health:DoDelta(2, true, nil, true)
 		    end
 		    if inst:HasTag("lvl3") then
-			guy.components.health:DoDelta(3, true, nil, true)
+			guy.components.health:DoDelta(6, true, nil, true)
 		    end
 	    end
 		end

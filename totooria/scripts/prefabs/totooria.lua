@@ -86,9 +86,6 @@ local function shuxing(inst) --计算属性
 		inst.components.totooriastatus.lingqiao = 1
 	end
 	
-	--攻击力判定
-	damagemodifer(inst)
-	
 	--HP判定
 	local health_percent = inst.components.health:GetPercent()
 	inst.components.health.maxhealth = 75+inst.components.totooriastatus.xueliang*125/20
@@ -207,7 +204,6 @@ local function xidian(inst)
 end
 
 local function onattack(inst, data)
-	damagemodifer(inst)
 	--嗜血特技判定
     local target = data.target
     if inst.components.totooriastatus.shixue == 1 then
