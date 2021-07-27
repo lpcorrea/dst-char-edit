@@ -82,32 +82,30 @@ local function fn()
     inst.entity:SetPristine()
 
     inst:AddComponent("inspectable")
-
     inst:AddComponent("tradable")
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "ehardhat"
     inst.components.inventoryitem.atlasname = "images/inventoryimages/ehardhat.xml"
+    MakeInventoryFloatable(inst, "med", nil, 0.6)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
-    inst.components.inventoryitem.keepondeath = true
-    inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED * 4
-    inst.components.equippable.walkspeedmult = 1.7
+    inst.components.equippable.dapperness = TUNING.DAPPERNESS_MED * 2
 
     inst:AddComponent("armor")
-    inst.components.armor:InitCondition(TUNING.ARMOR_EHARDHAT, TUNING.ARMOR_HARDHAT_ABSORPTION)
+    inst.components.armor:InitCondition(9 * 9999999999, TUNING.ARMOR_HARDHAT_ABSORPTION)
 
     inst:AddComponent("waterproofer")
-    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_HUGE * 2)
+    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_ABSOLUTE)
 
 	inst:AddComponent("resistance")
     inst.components.resistance:SetOnResistDamageFn(OnResistDamage)
 
     inst:AddComponent("insulator")
-    inst.components.insulator:SetInsulation( TUNING.INSULATION_HUGE * 2 )
+    inst.components.insulator:SetInsulation( TUNING.INSULATION_LARGE * 2 )
 
     MakeHauntableLaunch(inst)
 

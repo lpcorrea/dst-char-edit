@@ -300,7 +300,7 @@ nil, nil, nil, nil, "white_bone",
 "images/monkey_king_item.xml",
 "bone_whip.tex")
 
-AddRecipe("bone_wand",{Ingredient("boneshard", 4),Ingredient("livinglog", 2),Ingredient("purplegem", 2)}, WBRECIPE,  TECH.NONE,
+AddRecipe("bone_wand",{Ingredient("boneshard", 4),Ingredient("redgem", 2)}, WBRECIPE,  TECH.NONE,
 nil, nil, nil, nil, "white_bone",
 "images/monkey_king_item.xml",
 "bone_wand.tex")

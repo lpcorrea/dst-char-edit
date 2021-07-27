@@ -8,8 +8,6 @@ local assets =
 
 local start_inv =
 {
-	"ehardhat",
-	"tf2wrench",
 }
 for k, v in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
 	start_inv[string.lower(k)] = v.ENGINEER

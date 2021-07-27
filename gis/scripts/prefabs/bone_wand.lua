@@ -4,6 +4,43 @@ local assets =
     Asset("ATLAS", "images/inventoryimages/bone_wand.xml"),
 }
 
+local function lighton(inst, owner)
+    if inst._light ~= nil then
+        inst._light:Remove()
+    end
+    if owner and owner:HasTag("lamp") then return end
+    inst._light = SpawnPrefab("minerhatlight")
+    inst._light.Light:SetFalloff(0.7)
+    inst._light.Light:SetIntensity(.5)
+    inst._light.Light:SetRadius(4)
+    inst._light.Light:SetColour(255/255,255/255,255/255)
+    if owner ~= nil then
+        inst._light.entity:SetParent(owner.entity)
+    else
+        inst._light.entity:SetParent(inst.entity)
+    end
+    if TheWorld.components.worldstate.data.isday then
+        inst._light.Light:SetIntensity(0)
+        inst._light.Light:Enable(false)
+    end
+    local t = 100
+    inst:WatchWorldState("startday", function()
+        for i=1, t do
+            inst:DoTaskInTime(i*FRAMES, function()
+                inst._light.Light:SetIntensity(.5-i/t*.5)
+            end)
+        end
+        inst:DoTaskInTime(t*FRAMES, function() inst._light.Light:Enable(false) end)
+    end)
+    inst:WatchWorldState("startdusk", function()
+        inst._light.Light:Enable(true)
+        for i=1, t do
+            inst:DoTaskInTime(i*FRAMES, function()
+                inst._light.Light:SetIntensity(i/t*.5)
+            end)
+        end
+    end)
+end
 
 local function onequip(inst, owner)
     inst.components.myth_itemskin:OverrideSymbol(owner, "swap_object")
@@ -168,7 +205,8 @@ local function fn()
     end
 	
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(10)
+    inst.components.weapon:SetDamage(51)
+    inst.components.weapon:SetRange(6, 8)
 	--inst.components.weapon.attackwear = 2
 
     inst:AddComponent("inspectable")
@@ -176,9 +214,12 @@ local function fn()
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.atlasname = "images/inventoryimages/bone_wand.xml"
 
+    inst.components.inventoryitem:SetOnDroppedFn(lighton)
+	inst.components.inventoryitem:SetOnPutInInventoryFn(lighton)
+
     inst:AddComponent("finiteuses")
-    inst.components.finiteuses:SetMaxUses(25)
-    inst.components.finiteuses:SetUses(25)
+    inst.components.finiteuses:SetMaxUses(250000)
+    inst.components.finiteuses:SetUses(250000)
 	inst.components.finiteuses.repairnum = -10
     inst.components.finiteuses:SetOnFinished(inst.Remove)
 	local old_SetUses = inst.components.finiteuses.SetUses
@@ -188,10 +229,18 @@ local function fn()
 		end	
 		old_SetUses(self,val)
 	end
+
+    inst:AddComponent("tool")
+    inst.components.tool:SetAction(ACTIONS.CHOP, 10)
+    inst.components.tool:SetAction(ACTIONS.MINE, 10)
+    inst.components.tool:SetAction(ACTIONS.HAMMER, 10)
+    inst.components.tool:SetAction(ACTIONS.DIG)
 	
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
+    inst.components.inventoryitem.keepondeath = true
+    inst.components.equippable.walkspeedmult = 1.7
 	
     inst:AddComponent("spellcaster")
 	inst.components.spellcaster.CanCast =  function(self,doer, target, pos) return doer and doer.prefab == "white_bone" end
@@ -202,7 +251,7 @@ local function fn()
 
 	inst:AddComponent("myth_rechargeable")
     inst.components.rechargeable = inst.components.myth_rechargeable
-	inst.components.rechargeable:SetRechargeTime(10)
+	inst.components.rechargeable:SetRechargeTime(8)
 	
 	local old_StartRecharging = inst.components.rechargeable.StartRecharging
 	inst.components.rechargeable.StartRecharging = function(self)

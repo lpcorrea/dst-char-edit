@@ -90,7 +90,6 @@ end
 
 local function OnHitOther(inst) --美人形态攻击变身
 	if inst._isbeauty:value() == true  then 
-		dropequpitem(inst)
 		inst._isbeauty:set(false)
 		SpawnPrefab("white_bone_changefx").Transform:SetPosition(inst.Transform:GetWorldPosition())
 		SetBuild(inst)
@@ -100,7 +99,6 @@ end
 
 local function OnHungerChange(inst)--饱食度不够变身
 	if inst.components.hunger.current <= 50 and inst._isbeauty:value() == true  then 
-		dropequpitem(inst)
 		inst._isbeauty:set(false)
 		SpawnPrefab("white_bone_changefx").Transform:SetPosition(inst.Transform:GetWorldPosition())
 		SetBuild(inst)
@@ -462,6 +460,9 @@ local master_postinit = function(inst)
 	inst.components.foodaffinity:AddPrefabAffinity("reviver", TUNING.AFFINITY_15_CALORIES_HUGE)
 	
 	inst.components.sanity.night_drain_mult = 0
+
+	inst.components.temperature.mintemp = 36
+	inst.components.temperature.maxtemp = 37
 	
 	inst.sanity_aura_ent = CreateSanityAura()
 	inst.sanity_aura_ent.entity:SetParent(inst.entity)

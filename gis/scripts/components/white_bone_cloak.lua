@@ -8,9 +8,11 @@ local setability = {
 				if not self.inst.components.inventory:EquipHasTag("wb_armorstorage_back") then
 					local back = SpawnPrefab("wb_armorstorage_back")
 					self.inst.components.inventory:Equip(back)
+					self.inst.components.health:SetAbsorptionAmount(0.90)
 				end
 			else
 				self.inst.components.inventory:DropEverythingWithTag("wb_armorstorage_back")
+				self.inst.components.health:SetAbsorptionAmount(0)
 			end
 		end
 	end,

@@ -79,7 +79,7 @@ local function upgrade(inst)
 	inst.components.named:SetName("Dispenser lvl 3")
 	inst.AnimState:PlayAnimation("upgrade3")
 	inst.AnimState:PushAnimation("idle_3", true)
-	inst.components.sanityaura.aura = TUNING.SANITYAURA_HUGE
+	inst.components.sanityaura.aura = TUNING.SANITYAURA_TINY
     end
 end
 

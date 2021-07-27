@@ -10,6 +10,44 @@ local assets=
 local prefabs = {
 }
 
+local function lighton(inst, owner)
+    if inst._light ~= nil then
+        inst._light:Remove()
+    end
+    if owner and owner:HasTag("lamp") then return end
+    inst._light = SpawnPrefab("minerhatlight")
+    inst._light.Light:SetFalloff(0.7)
+    inst._light.Light:SetIntensity(.5)
+    inst._light.Light:SetRadius(4)
+    inst._light.Light:SetColour(255/255,255/255,255/255)
+    if owner ~= nil then
+        inst._light.entity:SetParent(owner.entity)
+    else
+        inst._light.entity:SetParent(inst.entity)
+    end
+    if TheWorld.components.worldstate.data.isday then
+        inst._light.Light:SetIntensity(0)
+        inst._light.Light:Enable(false)
+    end
+    local t = 100
+    inst:WatchWorldState("startday", function()
+        for i=1, t do
+            inst:DoTaskInTime(i*FRAMES, function()
+                inst._light.Light:SetIntensity(.5-i/t*.5)
+            end)
+        end
+        inst:DoTaskInTime(t*FRAMES, function() inst._light.Light:Enable(false) end)
+    end)
+    inst:WatchWorldState("startdusk", function()
+        inst._light.Light:Enable(true)
+        for i=1, t do
+            inst:DoTaskInTime(i*FRAMES, function()
+                inst._light.Light:SetIntensity(i/t*.5)
+            end)
+        end
+    end)
+end
+
 local function onequip(inst, owner) 
     owner.AnimState:OverrideSymbol("swap_object", "swap_totooriastaff5green", "swap_totooriastaff5green")
     owner.AnimState:Show("ARM_carry") 
@@ -210,6 +248,9 @@ local function fn()
     
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.atlasname = "images/inventoryimages/totooriastaff5green.xml"
+
+    inst.components.inventoryitem:SetOnDroppedFn(lighton)
+	inst.components.inventoryitem:SetOnPutInInventoryFn(lighton)
 
 	inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip( onequip )

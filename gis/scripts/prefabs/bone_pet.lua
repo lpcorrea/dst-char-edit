@@ -161,13 +161,13 @@ local function MakeMinion(prefab, master_postinit)
         inst.components.locomotor:SetSlowMultiplier(.6)
 
         inst:AddComponent("health")
-        inst.components.health:SetMaxHealth(75)
+        inst.components.health:SetMaxHealth(750)
         inst.components.health.nofadeout = true
 
         inst:AddComponent("combat")
         inst.components.combat.hiteffectsymbol = "torso"
         inst.components.combat:SetRange(2)
-		inst.components.combat:SetDefaultDamage(30)
+		inst.components.combat:SetDefaultDamage(45)
 		inst.components.combat:SetAttackPeriod(0.5)
 		inst.components.combat:SetRetargetFunction(2, retargetfn)
 		inst.components.combat:SetKeepTargetFunction(keeptargetfn)
@@ -206,7 +206,7 @@ local function MakeMinion(prefab, master_postinit)
         inst:ListenForEvent("attacked", OnAttacked)
 		
 		inst:AddComponent("timer")
-		inst.components.timer:StartTimer("timeover", 480*2)
+		inst.components.timer:StartTimer("timeover", 48000)
 		inst:ListenForEvent("timerdone", OnTimer)
 
         inst.OnSave = onsave

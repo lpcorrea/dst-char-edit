@@ -1,7 +1,7 @@
 name = "Eng (ninjx)"
 description = "xxx"
 author = "ninjx"
-version = "1.4"
+version = "1.5"
 forumthread = ""
 api_version = 10
 dont_starve_compatible = false --Not compatible with Singleplayer
@@ -67,7 +67,7 @@ configuration_options =
 		    {data="harder",description="Harder",
 			   hover = "40 Scrap, 6 Gears, 5 Gold Nuggets (Alchemy Engine)"},
 		},
-		default="easy"
+		default="default"
 	},
 
 	{
@@ -84,7 +84,7 @@ configuration_options =
 		    {data="harder",description="Harder",
 			   hover = "35 Scrap, 6 Red Gems, 5 Gears"},
 		},
-		default="easy"
+		default="default"
 	},
 
 	{
@@ -159,7 +159,7 @@ configuration_options =
 			{data=90,description="90"},
 			{data=100,description="100"},
 		},
-		default=100,
+		default=4,
 	},
 
 	{
@@ -199,7 +199,7 @@ configuration_options =
 			{data=30,description="30"},
 			{data=50,description="50"},
 		},
-		default=20,
+		default=13,
 	},
 
 	{
@@ -313,7 +313,7 @@ configuration_options =
 			{data=900,description="900"},
 			{data=1000,description="1000"},
 		},
-		default=300,
+		default=200,
 	},
 
 	{
@@ -406,7 +406,7 @@ configuration_options =
 			{data=90,description="90"},
 			{data=100,description="100"},
 		},
-		default=100,
+		default=4,
 	},
 
 	{
@@ -467,7 +467,7 @@ configuration_options =
 			{data=50,description="50"},
 			{data=100,description="100"},
 		},
-		default=2,
+		default=3,
 	},
 	--Teles
 	{
@@ -527,7 +527,7 @@ configuration_options =
 			{data=150,description="100"},
 			{data=200,description="100"},
 		},
-		default=200,
+		default=4,
 	},
 	{
 		name    = "eteleport_penalty",
@@ -551,7 +551,7 @@ configuration_options =
 			{description = "-90", data = 90},
 			{description = "-100", data = 100},
 		},
-		default = 0,
+		default = 5,
 	},
 
 	{
@@ -574,9 +574,9 @@ configuration_options =
 			{description = "34", data = 34},
 			{description = "37", data = 37},
 			{description = "40", data = 40},
-			{description = "50", data = 50},
+			{description = "42.5", data = 42.5},
 		},
-		default = 50,
+		default = 17,
 	},
 
 	{
@@ -598,9 +598,9 @@ configuration_options =
 			{description = "300", data = 300},
 			{description = "375", data = 375},
 			{description = "400", data = 400},
-			{description = "700000", data = 700000},
+			{description = "500", data = 500},
 		},
-		default = 700000,
+		default = 150,
 	},
 
 	{
@@ -617,7 +617,7 @@ configuration_options =
 		    {data="harder",description="Harder",
 			   hover = "12 Scrap, 5 Twigs, 1 Gear"},
 		},
-		default="easy"
+		default="default"
 	},
 
 	{
@@ -636,7 +636,7 @@ configuration_options =
 		    {data="harder",description="Harder",
 			   hover = "4 Flint, 4 Twigs, 1 Electrical Doodad"},
 		},
-		default="easier"
+		default="easy"
 	},
 	
 	{
@@ -722,9 +722,9 @@ configuration_options =
 			{description = "490", data = 490},
 			{description = "500", data = 500},
 			{description = "530", data = 530},
-			{description = "70000000", data = 70000000},
+			{description = "600", data = 600},
 		},
-		default = 70000000,
+		default = 295,
 	},
 
 	{
@@ -741,7 +741,7 @@ configuration_options =
 		    {data="harder",description="Harder",
 			   hover = "8 Scrap, 3 Gold Nuggets, 1 Straw Hat"},
 		},
-		default="easy"
+		default="default"
 	},
 
 	{
@@ -771,7 +771,7 @@ configuration_options =
 			{data=150,description="150"},
 			{data=200,description="200"},
 		},
-		default=0,
+		default=33,
 	},
 
 	{
@@ -801,7 +801,7 @@ configuration_options =
 			{data=0.95,description="5% Less"},
 			{data=1,description="No Debuff"},
 		},
-		default=1,
+		default=0.80,
 	},
 
 }

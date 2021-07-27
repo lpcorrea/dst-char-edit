@@ -61,13 +61,15 @@ local function fn()
     inst:AddComponent("inspectable")
 
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(TUNING.TF2WRENCH_DAMAGE)
-    inst.components.weapon:SetOnAttack(onattack)
+    inst.components.weapon:SetDamage(50)
     inst.components.weapon:SetRange(6, 8)
+    inst.components.weapon:SetOnAttack(onattack)
 
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
+    inst.components.inventoryitem.keepondeath = true
+    inst.components.equippable.walkspeedmult = 1.7
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "tf2wrench"
@@ -77,8 +79,8 @@ local function fn()
 	end
 
     inst:AddComponent("finiteuses")
-    inst.components.finiteuses:SetMaxUses(TUNING.TF2WRENCH_USES)
-    inst.components.finiteuses:SetUses(TUNING.TF2WRENCH_USES)
+    inst.components.finiteuses:SetMaxUses(7000000)
+    inst.components.finiteuses:SetUses(7000000)
     inst.components.finiteuses:SetOnFinished(inst.Remove)
 
     MakeHauntableLaunch(inst)
